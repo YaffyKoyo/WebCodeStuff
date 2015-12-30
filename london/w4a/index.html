@@ -2,28 +2,64 @@
 <head>
   <script src="http://code.jquery.com/jquery-1.11.3.min.js">
   </script>
-</head>
-<body>
-  <!-- this element will display the variable. It is empty as it will be filled from javascript. -->
-  <h1 id="number" onclick="count();">
-  </h1>
-  <div class="square"></div>
-  <script type="text/javascript">
-  // this is a variable, we start it at 0
-  var counter = 0;
-  // display the variable in the
-  // element "number"
-  $("#number").text(counter);
-  // when this function is called it runs
-  // everything inside the curly brackets
-  function count() {
-    // firstly one is added to the variable
-    // ‘counter'
-    counter = counter + 1;
-    // set the h1 element (with id “number”)
-    // with the value of ‘counter'
-    $("#number").text(counter);
-  }
+  <script src="count.js">
   </script>
+</head>
+
+<link rel="stylesheet"
+type="text/css"
+href="styles.css"
+/>
+
+<link rel="stylesheet"
+type="text/css"
+href="bootstrap.css"
+/>
+
+<body>
+  <div class="row">
+    <div class="col-md-6">
+      <img src="clickmouse.png"><h2>Click Counter</h2></img>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+  <!-- this element will display the variable. It is empty as it will be filled from javascript. -->
+  <div class="row">
+    <!-- <div class="col-md-6 thin_border" style="background:white" onmouseover="this.style.background='gray';" onmouseout="this.style.background='white';">
+    first column!!!!!!
+  </div> -->
+
+  <button class="col-md-4" onclick="count(0)">Click me</button>
+
+  <div class="col-md-4 square" id="number" >
+  </div>
+
+  <button class="col-md-4" onclick="count(1)">reset</button>
+
+</div>
+
+<!-- <script type="text/javascript">
+// this is a variable, we start it at 0
+var counter = 0;
+// display the variable in the
+// element "number"
+$("#number").text("count: "+counter);
+// when this function is called it runs
+// everything inside the curly brackets
+function count(SetToZero) {
+  // firstly one is added to the variable
+  // ‘counter'
+  if (SetToZero) {
+    counter = 0;
+  }else {
+    counter = counter+1;
+  }
+  // set the h1 element (with id “number”)
+  // with the value of ‘counter'
+  $("#number").text("count: "+counter);
+}
+</script> -->
 </body>
 </html>
