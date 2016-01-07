@@ -1,14 +1,14 @@
 
 /**
- * turn the image ot grayscale or inverse their color
+ * Write a description of HelloWorld here.
  * 
- * @author Yafei Qu 
- * @version 02/01/2016
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 import edu.duke.*;
 import java.io.*;
 
-public class WeekOneAssignments {
+public class w1a {
     public ImageResource makeInverse (ImageResource image) {
             ImageResource outImage = new ImageResource(image.getWidth(),image.getHeight());
             for(Pixel pixel: outImage.pixels()){
@@ -52,5 +52,4 @@ public class WeekOneAssignments {
         }
     }
 }
-
 

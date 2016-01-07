@@ -8,7 +8,7 @@
 import edu.duke.*;
 import java.io.*;
 
-public class WeekOneAssignments {
+public class w1as {
     public ImageResource makeInverse (ImageResource image) {
             ImageResource outImage = new ImageResource(image.getWidth(),image.getHeight());
             for(Pixel pixel: outImage.pixels()){
