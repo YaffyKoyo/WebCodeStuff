@@ -24,8 +24,6 @@ public class w2a2 {
             System.out.println("stop at "+stopLoc);
             String onePiece = dna.substring(loc+3,stopLoc);
             store.add(onePiece);
-            //System.out.println("cg ratio " + cgRatio(lowerDNA.substring(loc+1,stopLoc)));   
-            //System.out.println(onePiece);
             start = loc+3;
         }
         return store;
@@ -51,9 +49,9 @@ public class w2a2 {
         int countC = 0;
         int countG = 0;
         for(int i=0;i<dna.length();i++){
-            if(dna.charAt(i)=='c'){
+            if(dna.toLowerCase().charAt(i)=='c'){
                 countC++;}
-            if(dna.charAt(i)=='g'){
+            if(dna.toLowerCase().charAt(i)=='g'){
                 countG++;}
         }
         return countC*1.0/countG;
@@ -68,19 +66,19 @@ public class w2a2 {
                 countLessThan60++;
             }
         }
-        
+
         for(String gene:sr.data()){
-            
+
             if(cgRatio(gene)>0.35){
-            System.out.println(cgRatio(gene)+"\t"+gene);
+                System.out.println(cgRatio(gene)+"\t"+gene);
                 cgMoreThan035++;}
         }
         System.out.println(countLessThan60);
-                System.out.println(cgMoreThan035);
+        System.out.println(cgMoreThan035);
     }
 
     public void test(){
-        String a = "cccatggggccctttaacccataataattataggagagagagagagatgagttt";
+        String a = "cccatggggcatgcctttaacccataataattataggagagagagagagatgagttt";
         findProtein(a);
     }
 
@@ -90,6 +88,7 @@ public class w2a2 {
             FileResource fr = new FileResource(f);
             String sr = fr.asString();
             printGenes(findProtein(sr));
+  
         }
     }
 }
