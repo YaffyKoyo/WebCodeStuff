@@ -36,7 +36,6 @@ public class w2a1 {
         URLResource url = new URLResource(link);
         String url_s = url.asString();
         String url_s_l = url_s.toLowerCase();
-        //int start = 0;//url_s_l.indexOf("youtube.com");
         for(String word: url.words()){
             if (word.toLowerCase().contains("youtube.com")){
                int start = word.indexOf("\"");
@@ -45,7 +44,6 @@ public class w2a1 {
             System.out.println(word);
             }
         }
-
     }
 
     public void test(){
