@@ -24,7 +24,7 @@ public class TagFinder {
 	}
 	
 	public void testing() {
-		String a = "cccatggggtttaaataataataggagagagagagagagttt";
+		String a = "cccatggggtttaaataataattaggagagagagagagagttt";
 		String ap = "atggggtttaaataataatag";
 		//String a = "atgcctag";
 		//String ap = "";

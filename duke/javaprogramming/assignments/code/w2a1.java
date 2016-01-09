@@ -14,9 +14,7 @@ public class w2a1 {
     public String findProtein(String dna) {
         String lowerDNA = dna.toLowerCase();
         int start = lowerDNA.indexOf("atg");
-        if (start == -1) {
-            return "";
-        }
+
         int stop1 = lowerDNA.indexOf("tag", start+3);
         if ((stop1 - start) % 3 == 0) {
             return dna.substring(start, stop1+3);
