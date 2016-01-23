@@ -62,12 +62,12 @@ public class w3a1{
         FileResource fr = new FileResource();
         CSVParser parser = fr.getCSVParser();
         String country = "China";
-        String item1 = "gold";
-        String item2 = "diamonds";
-        String amount = "$999,999,999";
+        String item1 = "cocoa";
+        String item2 = "flowers";
+        String amount = "$999,999,999,999";
         // countryInfo(parser,country);
         //listExportersTwoProducts(parser, item1, item2);
         //numberOfExporters(parser,item1);
-        bigExporters(parser,amount);
+       bigExporters(parser,amount);
     }
 }
