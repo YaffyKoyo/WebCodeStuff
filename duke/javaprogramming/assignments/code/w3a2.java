@@ -74,7 +74,7 @@ public class w3a2 {
             FileResource fr = new FileResource(f);
             CSVRecord currentRow = coldestHourInFile(fr.getCSVParser());
             coldestSoFar = getColdestOfTwo(currentRow, coldestSoFar);
-            if(fr.asString().contains(coldestSoFar.get("TemperatureF"))){
+            if(currentRow.get("TemperatureF").equals(coldestSoFar.get("TemperatureF"))){
                 coldestFile = f;
             }
         }
@@ -82,6 +82,7 @@ public class w3a2 {
         for(CSVRecord record: cfr.getCSVParser()){
            // System.out.println(record.get("DateUTC")+": "+record.get("TemperatureF"));
         }
+        System.out.println(coldestSoFar.get("TemperatureF")+" "+coldestSoFar.get("DateUTC"));
         return coldestFile.getName();
     }
 
