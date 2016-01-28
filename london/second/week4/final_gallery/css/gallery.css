@@ -1,4 +1,3 @@
-/* put your css code here */
 .crop-img{
   max-height:150px;
   max-width:100%;
@@ -16,12 +15,7 @@
 
 }
 
-.description{
-  text-align: justify;
-}
-
-
-/*
+/* 
  * uncomment this for some css3 drop shadows and rounded corners.
  */
 

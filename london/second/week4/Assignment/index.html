@@ -1,23 +1,116 @@
 <!-- This is a first example of using a template -->
-
+<html lang="en">
 <head>
 
-<!-- include our libraries and css files -->
+  <!-- include our libraries and css files -->
 
-<script src="js/jquery-2.1.4.min.js"></script>
-<script src="js/handlebars-v3.0.3.js"></script>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/handlebars-v3.0.3.js"></script>
 
-<script src="js/bootstrap.min.js"></script>
-<script src="AnimalsData.js"></script>
-<script src="assignment.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/playdata.js"></script>
+  <!--script src="js/play.js"></script-->
 
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="assignment.css" rel="stylesheet">
+  <script src="AnimalsData.js"></script>
+  <script src="assignment.js"></script>
+
+  <title>Animals Gallery</title>
+  <link href="assignment.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!--link href="css/animals.css" rel="stylesheet">
+
+  <link href="assignment.css" rel="stylesheet"-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 </head>
 
-<body>
+<body role="document">
+  <div class="container">
 
-    <!-- put your HTML here -->
+    <!-- page tile -->
+    <div class="page-header">
+      <h1>Animals Gallery</h1>
+    </div>
 
-</body>
+    <!-- A navigation menu that selects different views -->
+    <ul class="nav nav-tabs">
+      <li role="" ><a href="#" id="buttonCat">Categories</a></li>
+      <li role="" ><a href="#" id="buttonPot">Photos</a></li>
+    </ul>
+    <br/><br/>
+
+
+    <!-- the content section is empty as we will fill it
+    via javascript and templates -->
+    <div id="content"  class="container-fluid"  role="main">
+    </div>
+    <div id="modal-container"  >
+    </div>
+  </div> <!-- / container -->
+  <!-- put your HTML here -->
+
+  <!--
+  an list holds all the categories
+-->
+<script id="category-template" type="text/x-handlebars-template">
+  <div class="row">
+    <ul class="list-group">
+
+      {{#each category}}
+      <a href="#" class="list-group-item" data-id="{{@index}}">{{name}}, {{animals.length}} animals</a>
+      {{/each}}
+    </ul>
+  </div>
+</script>
+
+<!-- all the animals under the category -->
+
+<script id="animals-template" type="text/x-handlebars-template">
+  <div class="row">
+    <ul class="list-group">
+      {{#each animals}}
+      <div class="col-xs-12 col-md-3">
+        <div class="animal_small" data-id="{{@index}}">
+          <li class="list-group-item">
+            <img class="crop-img" src="{{image1}}" alt=""/>
+            <img class="crop-img" src="{{image2}}" alt=""/>
+            <h3>{{name}}</h3>
+            <p class="description">{{description}}</p>
+          </li>
+        </div>
+      </div>
+      {{/each}}
+    </ul>
+  </div>
+</script>
+
+<!--
+This third template displays a modal pop-up of the image.
+It has quite a bit of boilder plate HTML code but in
+essence it just displays and image tag within a
+set of divs that define the modal
+-->
+
+<script id="modal-template" type="text/x-handlebars-template">
+  <div id="imageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog"  style="width:800">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="col-xs-12 col-md-6">
+            <img  style="width:100%" src="{{image1}}"/></div>
+            <div class="col-xs-12 col-md-6">
+              <img  style="width:100%" src="{{image2}}"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+  </body>
+  </html>
