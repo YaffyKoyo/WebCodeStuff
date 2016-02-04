@@ -8,7 +8,7 @@
 import edu.duke.*;
 
 public class CaesarCipher {
-    
+
     public String encrypt(String input, int key){
         StringBuilder encrypted = new StringBuilder(input);
         String alphabet_u = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -30,7 +30,7 @@ public class CaesarCipher {
         }
         return encrypted.toString();
     }
-    
+
     public String encryptTwoKeys(String input, int key1, int key2){
         String odd = encrypt(input,key1);
         String even = encrypt(input,key2);
@@ -42,14 +42,13 @@ public class CaesarCipher {
         }
         return odd_b.toString();
     }
-    
+
     public void testCaesar() {
         int key = 17;
-       /* FileResource fr = new FileResource();
+        /* FileResource fr = new FileResource();
         String message = fr.asString();
-        */String encrypted = encryptTwoKeys("First Legion",23, key);
-System.out.println(encrypted);
+         */String encrypted = encryptTwoKeys("First Legion",23, key);
+        System.out.println(encrypted);
     }
 }
-
 
