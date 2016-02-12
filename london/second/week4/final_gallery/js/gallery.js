@@ -4,7 +4,7 @@
  */
 
 // variables for all of the templates so we only have to compile
-// them once on page load and can then use the same compiled 
+// them once on page load and can then use the same compiled
 // templates many times
 var albums_template, photos_template, photo_template, slideshow_template;
 
@@ -29,18 +29,18 @@ $(document).ready(function(){
 	//
 	var source   = $("#albums-template").html();
 	albums_template = Handlebars.compile(source);
-	
+
 	source   = $("#photos-template").html();
 	photos_template = Handlebars.compile(source);
-	
+
 	source   = $("#photo-template").html();
 	photo_template = Handlebars.compile(source);
-	
+
 	source   = $("#slideshow-template").html();
 	slideshow_template = Handlebars.compile(source);
 
-	// 
-	//  clicking on the albums tab shows the 
+	//
+	//  clicking on the albums tab shows the
 	//  thumbnails of all the albums
 	//
 	$("#albums-tab").click(function () {
@@ -54,16 +54,16 @@ $(document).ready(function(){
 		// then make albums tab active
 		$("#albums-tab").addClass("active");
 
-		// add a click callback to each album 
+		// add a click callback to each album
 		// thumbnail which displays the photos
 		// template on that album
-		// (I have written out the code for this 
+		// (I have written out the code for this
 		// function for clarity but it is actually
 		// pretty much the same as the photos tab
 		// function so we could acutally just
-		// call $(".photo-thumbnail").click() ) 
+		// call $(".photo-thumbnail").click() )
 		$(".album-thumbnail").click(function (){
-			
+
 			// get the index (position in the array)
 			// of the album we clicked on
 			// "this" is the element that was clicked on
@@ -91,19 +91,19 @@ $(document).ready(function(){
 
 				// set the current photo to this photo
 				current_photo = current_album.photos[index];
-				
+
 				// displays the single photo template
 				showTemplate(photo_template, current_photo);
 			});
 		});
 	});
 
-	// 
-	//  clicking on the photos tab shows all of the 
+	//
+	//  clicking on the photos tab shows all of the
 	//  photos in the current album
 	//
 	$("#photos-tab").click(function () {
-		
+
 		// displays the photos template
 		showTemplate(photos_template, current_album);
 
@@ -126,21 +126,21 @@ $(document).ready(function(){
 
 			// set the current photo to this photo
 			current_photo = current_album.photos[index];
-			
+
 			// displays the single photo template
 			showTemplate(photo_template, current_photo);
 		});
 	});
 
-	// 
+	//
 	//  clicking on the slideshow tab displays the
 	//  current album as a slide show
 	//
 	$("#slideshow-tab").click(function () {
-		// display the slideshow template using the 
+		// display the slideshow template using the
 		// current album
 		showTemplate(slideshow_template, current_album);
-		
+
 		// make the slideshow tab the active one
 		// first make the currently active tab inactive
 		$(".nav-tabs .active").removeClass("active");
@@ -149,7 +149,7 @@ $(document).ready(function(){
 	});
 
 	// start the page by showing the albums view
-	// we do this by virtually clicking on the 
+	// we do this by virtually clicking on the
 	// albums tab
 	$("#albums-tab").click();
 

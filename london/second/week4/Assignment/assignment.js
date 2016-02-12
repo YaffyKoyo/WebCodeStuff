@@ -21,6 +21,8 @@ $(document).ready(function(){
 
   $("#buttonCat").click(function(){
     showTemplate(category_template,animals_data);
+    $(".nav-tabs .active").removeClass("active");
+    $("#buttonCat").addClass("active");
 
     $(".list-group-item").click(function(){
       var index = $(this).data("id");
@@ -38,6 +40,9 @@ $(document).ready(function(){
 
   $("#buttonPot").click(function(){
     showTemplate(animals_template,current_category);
+    $(".nav-tabs .active").removeClass("active");
+    $("#buttonPot").addClass("active");
+    
     $(".animal_small").click(function(){
       var index = $(this).data("id");
       current_animal = current_category.animals[index];
