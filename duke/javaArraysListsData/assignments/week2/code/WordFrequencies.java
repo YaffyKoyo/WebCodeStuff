@@ -34,14 +34,26 @@ public class WordFrequencies {
         }
     }
 
+    public int findIndexOfMax(){
+        int max = myFreqs.get(0);
+        int maxIndex = 0;
+        for(int k=0; k < myFreqs.size(); k++){
+            if (myFreqs.get(k) > max){
+                max = myFreqs.get(k);
+                maxIndex = k;
+            }
+        }
+        return maxIndex;
+    }
+    
     public void tester(){
         findUnique();
         System.out.println("# unique words: "+myWords.size());
         for(int i = 0; i < myWords.size(); i++) {   
             System.out.println(myWords.get(i)+"\t"+myFreqs.get(i));
         } 
-        //int index = findMax();
-        //System.out.println("max word/freq: "+myWords.get(index)+" "+myFreqs.get(index));
+        int index = findIndexOfMax();
+        System.out.println("max word/freq: "+myWords.get(index)+" "+myFreqs.get(index));
     }
 
 }
