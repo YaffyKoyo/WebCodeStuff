@@ -59,7 +59,7 @@ public class w2a3 {
             if(dna.charAt(i)=='g'){
                 countG++;}
         }
-        return countC*1.0/countG;
+        return (countC+countG)*1.0/dna.length();
     }
 
     public void postGenes(StorageResource sr){
@@ -93,7 +93,7 @@ public class w2a3 {
             int firstQuote = index+6; // after href="
             int endQuote = source.indexOf("\"", firstQuote);
             String sub = source.substring(firstQuote, endQuote);
-            if (sub.startsWith("http")) {
+            if (sub.startsWith("https")) {
                 store.add(sub);
             }
             start = endQuote + 1;
