@@ -19,5 +19,11 @@ public class Tester
     
     public void testLogAnalyzer() {
         // complete method
+        LogAnalyzer la = new LogAnalyzer();
+        la.readFile("short-test_log");
+        la.printAll();
+        System.out.println(la.countUniqueIPsInRange(300,399));
+        la.printAllHigherThanNum(200);
+        la.uniqueIPVisitsOnDay("Sep 30");
     }
 }
