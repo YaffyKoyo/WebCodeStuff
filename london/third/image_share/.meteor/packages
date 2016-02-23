@@ -9,3 +9,5 @@ autopublish
 insecure
 twbs:bootstrap
 barbatus:stars-rating
+accounts-ui
+accounts-password
