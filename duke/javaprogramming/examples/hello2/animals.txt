@@ -1,9 +1,0 @@
-cat
-dog
-dinosaur
-dragon
-octopus
-lizard
-pig
-chicken
-cow
