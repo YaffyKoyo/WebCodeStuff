@@ -9,7 +9,7 @@ if (Meteor.isClient) {
 	// helper function that returns all available websites
 	Template.website_list.helpers({
 		websites:function(){
-			return Websites.find({});
+			return Websites.find({},{sort:{voting:-1}});
 		}
 	});
 
@@ -23,8 +23,16 @@ if (Meteor.isClient) {
 			// example of how you can access the id for the website in the database
 			// (this is the data context for the template)
 			var website_id = this._id;
+			var website_upvote = this.upVote;
+			var voting = this.voting;
 			console.log("Up voting website with id "+website_id);
 			// put the code in here to add a vote to a website!
+			var rating =0; //(event.currentTarget).data("userrating");
+			//console.log(rating);
+			Websites.update({_id:website_id}, {$set:{upVote:website_upvote+1}});
+			Websites.update({_id:website_id}, {$set:{voting:voting+1}});
+
+			console.log("voting of "+website_id+": "+website_upvote);
 
 			return false;// prevent the button from reloading the page
 		},
@@ -33,9 +41,16 @@ if (Meteor.isClient) {
 			// example of how you can access the id for the website in the database
 			// (this is the data context for the template)
 			var website_id = this._id;
+			var website_downvote = this.downVote;
+			var voting = this.voting;
 			console.log("Down voting website with id "+website_id);
-
 			// put the code in here to remove a vote from a website!
+			var rating = 0;// $(event.currentTarget).data("userrating");
+			//console.log(rating);
+			Websites.update({_id:website_id}, {$set:{downVote:website_downvote+1}});
+			Websites.update({_id:website_id}, {$set:{voting:voting-1}});
+
+			console.log("voting of "+website_id+": "+website_downvote);
 
 			return false;// prevent the button from reloading the page
 		}
@@ -55,12 +70,16 @@ if (Meteor.isClient) {
 			var description = event.target.description.value;
 			console.log("The title they entered is: "+description);
 
+
 			if(Meteor.user()){
 				Websites.insert({
 					url:url,
 					title:title,
 					description:description,
 					createdOn:new Date(),
+					upVote:0,
+					downVote:0,
+					voting:0
 					//createdBy:Meteor.user()._id
 				})
 			}
