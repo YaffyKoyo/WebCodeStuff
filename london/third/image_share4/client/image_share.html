@@ -9,7 +9,7 @@
 <template name="ApplicationLayout">
   {{> yield "navbar"}}
   {{> yield "main"}}
-  
+
 </template>
 
 <template name="welcome">
@@ -19,7 +19,7 @@
       <a href="/images" class="btn btn-info">ENTER</a>
     </div>
   </div>
-</template> 
+</template>
 
 <template name="image">
   <div class="container">
@@ -45,7 +45,7 @@
         <div class="modal-title">
         </div>
       </div>
-      <div class="modal-body">       
+      <div class="modal-body">
         <form class="js-add-image">
           <div class="form-group">
             <label for="img_src">Image URL:</label>
@@ -56,11 +56,11 @@
           <textarea class="form-control" id="img_alt" placeholder="Describe the image here" name="img_alt"></textarea>
         </div>
           <button class="btn btn-success">save</button>
-        </form> 
+        </form>
       </div>
       <div class="modal-footer">
         <button class="btn btn-warning" data-dismiss="modal">cancel</button>
-      </div>  
+      </div>
       </div>
     </div>
   </div>
@@ -82,15 +82,15 @@
   <div class="col-xs-12 col-md-3" id="{{_id}}">
   	<div class="thumbnail">
 
-  	 	<a href="/image/{{_id}}"><img class="js-image thumbnail-img"  src="{{img_src}}" 
+  	 	<a href="/image/{{_id}}"><img class="js-image thumbnail-img"  src="{{img_src}}"
   		alt="{{img_alt}}" /></a>
-  			
-  		<div class="caption">           
+
+  		<div class="caption">
              <h3>Rating: {{rating}}</h3>
 
         	<p>{{img_alt}}</p>
           <p>
-            User: 
+            User:
             <a href="#" class="js-set-image-filter">{{getUser createdBy}}</a>
           </p>
           <p>
