@@ -102,12 +102,15 @@
 <!-- template for more description -->
 <template name = "website_item_ind">
   <div class = "container top-margin">
-    <p><a href="{{url}}">{{title}}</a></p>
+    <p><h3><a href="{{url}}">{{title}}</a></h3></p>
     <p>
       {{description}}
     </p>
+    <br><p>
+      <h4>Comments:</h4>      {{>comment_form}}
+
+    </p>
     <p>{{>comment_list}}</p>
-      {{>comment_form}}
 
   </div>
 </template>
@@ -119,7 +122,7 @@
     <div id="comment_form" class="hidden_div">
       <form class="js-save-comment-form">
         <div class="form-group">
-          <label for="comment-content">Comments</label>
+          <label for="comment-content">Add your comments here</label>
           <input type="text" class="form-control" id="content" placeholder="type in here...">
         </div>
 
@@ -129,7 +132,7 @@
 </template>
 
 <template name="comment_list">
-  <div class = "container">
+
     <ol class = "list-group">
       {{#each comments}}
       <li class = "list-group-item">
@@ -139,6 +142,5 @@
       </li>
       {{/each}}
     </ol>
-    hahahahaha
-  </div>
+
 </template>

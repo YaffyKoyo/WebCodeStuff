@@ -2,6 +2,25 @@ Websites = new Mongo.Collection("websites");
 Comments = new Mongo.Collection("comments");
 
 
+Websites.allow({
+	update:function(userID, doc){
+		if(Meteor.user()){
+			return true;
+		}else{
+			return false;
+		}
+	},
+
+	insert:function(userID, doc){
+		if(Meteor.user()){
+			return true;
+		}else{
+			return false;
+		}
+	}
+})
+
+
 if (Meteor.isClient) {
 
 	/////
