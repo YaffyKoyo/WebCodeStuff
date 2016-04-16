@@ -1,0 +1,14 @@
+<template name="emoticons">
+	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    emoji<span class="caret"></span>
+  </button>
+  	<ul class="dropdown-menu list-inline scrollable-menu">
+	    {{#each emojis}}
+	    <li>
+	    	<a href="#" class="ClickEmoji js-putEmoji">
+	    	<img src='{{path}}' title='{{title}}' alt='{{alt}}' class='emoji'>
+	    	</a>
+	    </li>
+	    {{/each}}
+ 	 </ul>	
+</template>

@@ -1,0 +1,93 @@
+/* CSS declarations go here */
+
+.user_avatar{
+	min-height:100px;
+	text-align: center;
+
+}
+.avatar_img{
+	height:75px;
+}
+
+.navbar-brand {
+    padding: 0px;
+    padding-top: 5px;
+    padding-left: 5px;
+
+}
+
+.nav > li > a {
+    color: white;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #bcf;
+    color: #004;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar {
+    margin-bottom: 15px;
+    border-radius: 0px;
+   
+}
+
+.you{
+    background-color: #337ab7;
+    color:white;
+}
+
+img.emoji {
+  font-size: inherit;
+  height: 3ex;
+  /* prevent img stretch */
+  width: auto;
+  min-width: 25px;
+  min-height: 25px;
+
+  /* Inline alignment adjust the margins  */
+  display: inline-block;
+  margin:  .15em 0;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+
+
+.scrollable-menu {
+    height: auto;
+    max-height: 95px;
+    overflow-x: hidden;
+}
+
+
+.dropdown-menu > li > a {
+    padding: 0px;
+}
+
+.list-inline > li {
+    padding-right: 0px; 
+    padding-left: 0px; 
+} 
+
+#tx-emj {
+    background-color: white;
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: 1px solid gray;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    height: 80px;
+    overflow: auto;
+    padding: 2px;
+    resize: both;
+    width: 100%;
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+        content:attr(data-ph)
+}

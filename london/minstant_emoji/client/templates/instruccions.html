@@ -1,0 +1,68 @@
+<template name="instruccions">
+	<div class="c-peer-review-assignment c-peer-card card-rich-interaction">
+		<h2 class="headline-2-text">Instructions</h2>
+		<div class="bt3-row">
+			<div class="bt3-col-md-12">
+				<div data-js="introduction">
+					<div class="rc-CMLPreview with-styles" data-reactid=".6x">
+						<p>In this peer assessment you will be working on an instant messaging app called <strong>minstant! </strong></p><p>You are provided with a working starter application and you have to use the skills you havae learned in the course to improve the application in various ways. The starter application can be downloaded below:</p>
+						<div data-block-type="asset">
+							<a target="_blank" href="https://d3c33hcgiwev3.cloudfront.net/_1a3b19b92168cfe84ac0b0b36702ea9d_minstant_b.zip?Expires=1458950400&Signature=bSyKkjlWktrVm6i1kkp9V8G0weDQgEXlcFgs9xfT04qJ--P48QqdE2233QXrwoKzxPrO4R4BQg4qzN37NRN2raoMKFjKshbny1zUGS1rII6k1LulNT3TtAzb21mL5zbDBTOVQqVtHgQtBWMuqfoh91uMJxebLfb3rf-kV0pQm0E_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A" data-id="XOoqnrhREeWD5ApooqEfRQ" data-name="minstant_b" data-extension="zip" data-type="generic">minstant_b.zip</a>
+						</div>
+						<p>You should:</p>
+						<ol>
+							<li>download and run the starter application,</li>
+							<li>then test it out by logging in as different users in two different web browsers at the same time,seeing if the users can talk to each other</li>							
+						</ol>
+
+						 <p>. It creates a set of test user accounts automatically, so you can log in as</p>
+						 <ul>
+						 	<li>user1@test.com ......     pwd: test123</li>
+						 	<li>user2@test.com ......     pwd: test123</li>
+						 	<li>user3@test.com ......     pwd: test123</li>
+						 	<li>user4@test.com ......     pwd: test123</li>
+						 	<li>user5@test.com ......     pwd: test123</li>
+						 	<li>user6@test.com ......     pwd: test123</li>
+						 	<li>user7@test.com ......     pwd: test123</li>
+						 	<li>user8@test.com ......     pwd: test123</li>
+						 </ul>
+
+						<p>All with the password test123.</p>
+						<hr>
+						<h4>Task 1: Improve the look and feel</h4>
+						<p>Adapt the templates and helper functions so that the messaging window displays users’ avatars next to their messages. Feel free to add other enhancements! </p>
+						<h4>Task 2: Implement data writing security</h4>
+						<p>Remove the insecure package from the application and implement a Meteor method to allow the insertion of chat items in the Chats collection. Test that you cannot insert items directly any more. </p>
+						<h4>Task 3: Implement data reading security</h4>
+						<p>Remove the autopublish package from the application and implement publish and subscribe for Chats. Users should only be able to retrieve chats that have their user id in either the user1Id field or the user2Id field. Test by logging in as different users and checking what you can see</p>
+						<hr>
+						<h3>Challenge: Implement emoticons </h3>
+						<p>Can you implement emoticon functionality which allows the user to insert graphical emoticons into their message? Emoticons are small icons such as smiley faces which are typical of this kind of application. </p>
+						<hr>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="c-peer-review-assignment-section bt3-row">
+			<div class="bt3-col-md-12">
+				<h2>Review criteria</h2>							
+				<p>Your work will be reviewed by people using it and testing out the security in the browser console.</p>
+				<p>Reviewers will be instructed to check that each of the required things have been implemented.</p>
+				<ul>
+					<li>70% of the mark is available for the three main tasks</li>
+					<li>30% extra can be gained by attempting the challenge</li>
+				</ul>
+				<p></p>
+				<p>The mark is broken down as follows:</p>
+				<ul>
+					<li><p>Submit a working project as a standard zip file: <span class="label label-primary">10%</span></p></li>
+					<li><p>Implement well laid out avatars in chat window: <span class="label label-primary">20%</span></p></li>
+					<li><p>Implement methods to prevent direct inserts: <span class="label label-primary">20%</span></p></li>
+					<li><p>Implement publish and subscribe to prevent users seeing conversations they were not involved in: <span class="label label-primary">20%</span></p></li>
+					<li><p>Implement challenge: <span class="label label-primary">30%</span></p></li>
+				</ul>
+				<h3><span class="label label-default center-block">The pass mark is 60%</span></h3>
+			</div>
+		</div>
+	</div>
+</template>	

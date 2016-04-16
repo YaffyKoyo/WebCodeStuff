@@ -1,0 +1,91 @@
+<!-- Top level template for the chat page -->
+<template name="chat_page">
+	<h2>Type in the box below to send a message!</h2>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="well well-lg">
+			{{#each messages}}
+				{{> chat_message}}
+			{{/each}}
+			{{> form_message_send}}
+			</div>	
+		</div>
+	</div>
+    
+</template>
+
+<!-- simple template that displays a message -->
+<template name="chat_message">
+	<div class="media"> 
+		{{#if user_msg_current}}
+	        {{> img_msg}}
+	    {{else}}
+	        {{> msg_img}} 
+	    {{/if}}
+	</div>
+	<br>
+</template>
+
+<template name="img_msg">
+<div class="col-xs-10 col-sm-9 col-md-8">
+	<div class="media-left"> 
+		<a href="#"> 
+			<img class="media-object"  alt="64x64" src="/{{usermsg}}"  data-holder-rendered="true" style="width: 40px; height: 40px;"> 
+		</a> 
+	</div> 
+	<div class="media-body"> 
+		<h6 class="media-heading"><span class="label label-default"> {{username}}</span>&nbsp;({{datefromNow}})</h6>
+		<p class="js-emoji" id="{{_id}}">
+			{{#emoji}}{{text}}{{/emoji}}
+		</p> 
+	</div>
+</div>
+</template>
+
+<template name="msg_img">
+<div class="col-xs-10 col-sm-9 col-md-8  col-xs-offset-2 col-sm-offset-3 col-md-offset-4">
+	<div class="media-body"> 
+		<div class="">
+			<h6 class="media-heading pull-right">({{datefromNow}})&nbsp;<span class="label label-primary"> {{username}}</span></h6>
+			<br>
+		</div>
+		<div class="">
+			<p class="pull-right js-emoji" id="{{_id}}">
+			{{#emoji}}{{text}}{{/emoji}}</p>
+			
+		</div> 
+	</div>
+	<div class="media-right"> 
+		<a href="#"> 
+			<img class="media-object"  alt="64x64" src="/{{usermsg}}"  data-holder-rendered="true" style="width: 40px; height: 40px;"> 
+		</a> 
+	</div> 
+</div>
+</template>
+
+<!-- simple template that displays form to send a message -->
+<template name="form_message_send">
+	<div class="media"> 
+		<div class="media-left"> 
+			<a href="#"> 
+				<img class="media-object"  alt="64x64" src="/{{usersending}}"  data-holder-rendered="true" style="width: 120px; height: 120px;"> 
+			</a> 
+		</div> 
+		<div class="media-body"> 
+			<h6 class="media-heading"><span class="label label-default">you</span>&nbsp;say:</h6>
+			<form class="js-send-chat">
+				<div id="tx-emj" contenteditable class="input" data-emojiable="true"  data-ph="type a message here..." name="chat"></div>
+				<!--
+				<textarea class="input" data-emojiable="true" rows="3" name="chat" placeholder="type a message here... emoji :smile: will convert when submit" style="min-width: 100%"></textarea>
+				-->
+				
+				
+				<button class="btn btn-default">send</button>
+				{{ > emoticons }}
+			</form>
+		</div> 
+	</div>
+</template>
+
+
+
