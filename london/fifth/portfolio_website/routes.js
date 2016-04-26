@@ -7,3 +7,5 @@ Router.route('/', function () {
 Router.route('/news', function () {
   this.render('news');
 });
+
+
